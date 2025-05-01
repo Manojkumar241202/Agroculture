@@ -11,16 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$hash = dataFilter( md5( rand(0,1000) ) );
 	$category = dataFilter($_POST['category']);
     $addr = dataFilter($_POST['addr']);
-
+    $user_type = dataFilter($_POST['user_type']);
 	$_SESSION['Email'] = $email;
     $_SESSION['Name'] = $name;
-    $_SESSION['Password'] = $pass;
+    $_SESSION['Password'] = $pass;  
     $_SESSION['Username'] = $user;
     $_SESSION['Mobile'] = $mobile;
     $_SESSION['Category'] = $category;
     $_SESSION['Hash'] = $hash;
     $_SESSION['Addr'] = $addr;
     $_SESSION['Rating'] = 0;
+    $_SESSION['user_Type'] = $user_type;
 }
 
 
@@ -132,25 +133,25 @@ else
             $User = $result->fetch_assoc();
             $_SESSION['id'] = $User['bid'];
 
-            $_SESSION['message'] =
+            // $_SESSION['message'] =
 
-                     "Confirmation link has been sent to $email, please verify
-                     your account by clicking on the link in the message!";
+            //          "Confirmation link has been sent to $email, please verify
+            //          your account by clicking on the link in the message!";
 
-            $to      = $email;
-            $subject = "Account Verification ( ArtCircle.com )";
-            $message_body = "
-            Hello '.$user.',
+            // $to      = $email;
+            // $subject = "Account Verification ( DirectHarvest.com )";
+            // $message_body = "
+            // Hello '.$user.',
 
-            Thank you for signing up!
+            // Thank you for signing up!
 
-            Please click this link to activate your account:
+            // Please click this link to activate your account:
 
-            http://localhost/AgroCulture/Login/verify.php?email=".$email."&hash=".$hash;
+            // http://localhost/AgroCulture/Login/verify.php?email=".$email."&hash=".$hash;
 
             //$check = mail( $to, $subject, $message_body );
 
-            header("location: profile.php");
+            header("location: success.php");
     	}
     	else
     	{

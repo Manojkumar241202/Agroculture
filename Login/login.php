@@ -23,7 +23,7 @@ if($category == 1)
     {
         $User = $result->fetch_assoc();
 
-        if (($_POST['pass']== $User['fpassword']))
+        if (password_verify($_POST['pass'], $User['fpassword']))
         {
             $_SESSION['id'] = $User['fid'];
             $_SESSION['Hash'] = $User['fhash'];
@@ -39,6 +39,7 @@ if($category == 1)
             $_SESSION['logged_in'] = true;
             $_SESSION['Category'] = 1;
             $_SESSION['Rating'] = 0;
+            $_SESSION['user_type'] = 'farmer';
 
             if($_SESSION['picStatus'] == 0)
             {
@@ -91,6 +92,7 @@ else
             $_SESSION['Active'] = $User['bactive'];
             $_SESSION['logged_in'] = true;
             $_SESSION['Category'] = 0;
+            $_SESSION['user_type'] = 'buyer';
 
             //echo $_SESSION['Email']."  ".$_SESSION['Name'];
 

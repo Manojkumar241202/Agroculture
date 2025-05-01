@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 
 			<header id="header">     
-				<h1>VSP Wholesale & Retail Mart</h1>
+				<h1>DirectHarvest</h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>

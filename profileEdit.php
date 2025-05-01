@@ -5,16 +5,39 @@
 <!DOCTYPE HTML>
 
 <html lang="en">
-    <head>
+    <!-- <head>
         <title>Profile: <?php echo $_SESSION['Username']; ?></title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="bootstrap\js\bootstrap.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/main.css" />
-    </head>
+        
+    </head> -->
+    <head>
+		<meta charset="UTF-8">
+		<title>AgroCulture</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="bootstrap\js\bootstrap.min.js"></script>
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="login.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
 
     <body class="subpage">
 
@@ -26,7 +49,7 @@
             <div class="inner">
                 <div class="box">
                 <header>
-                    <span class="image left"><img src="<?php echo 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" class="img-circle" class="img-responsive" height="200px"></span>
+                    <span class="image left"><img src="<?php echo isset($_SESSION['picName']) ? 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand() : 'images/default-profile.jpg'; ?>" class="img-circle" class="img-responsive" height="200px"></span>
                     <br>
                     <h2><?php echo $_SESSION['Name'];?></h2>
                     <h4><?php echo $_SESSION['Username'];?></h4>
@@ -46,7 +69,7 @@
                             <input type="text" name="name" id="name" value="<?php echo $_SESSION['Name'];?>" placeholder="Full Name" required />
                         </div>
                         <div class="4u 12u$(xsmall)">
-                            <input type="text" name="mobile" id="mobile" value="<?php echo $_SESSION['MobileNo'];?>" placeholder="Mobile No" required/>
+                            <input type="text" name="mobile" id="mobile" value="<?php echo $_SESSION['Mobile'];?>" placeholder="Mobile No" required/>
                         </div>
                         <div class="6u 12u$(xsmall)">
                             <input type="text" name="uname" id="uname" value="<?php echo $_SESSION['Username'];?>" placeholder="Username" required/>
@@ -54,7 +77,7 @@
                         <div class="6u 12u$(xsmall)">
                             <input type="email" name="email" id="email" value="<?php echo $_SESSION['Email'];?>" placeholder="Email" required/>
                         </div>
-                        <div class="6u 12u$(xsmall)">
+                        <!-- <div class="6u 12u$(xsmall)">
                             <div class="select-wrapper">
                               <select name="section" id="section">
                                     <option value="<?php echo $_SESSION['Section'];?>"><?php echo $_SESSION['Section'];?></option>
@@ -68,7 +91,7 @@
                         </div>
                         <div class="6u 12u$(xsmall)">
                             <input type="text" name="post" id="post" value="<?php echo $_SESSION['Post'];?>" placeholder="Post Name" required/>
-                        </div>
+                        </div> -->
                         <p>
                             <b>Education : </b>
                         </p>
@@ -83,7 +106,7 @@
                          <div class="3u 12u$(small)">
                             <input type="radio" id="mtech" name="edu" value="M.TECH">
                             <label for="mtech">M.TECH</label>
-                        </div>s
+                        </div>
                         <p>
                             <b>Choose Year : </b>
                         </p>
