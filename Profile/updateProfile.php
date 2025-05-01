@@ -16,7 +16,7 @@
         $_SESSION['Email'] = $email;
         $_SESSION['Name'] = $name;
         $_SESSION['Username'] = $user;
-        $_SESSION['MobileNo'] = $mobile;
+        $_SESSION['Mobile'] = $mobile;
         $_SESSION['Section'] = $section;
         $_SESSION['Post'] = $post;
         $_SESSION['Edu'] = $edu;
@@ -24,7 +24,7 @@
     }
     $id = $_SESSION['id'];
 
-    $sql = "UPDATE members SET Name='$name',Username='$user',MobileNo='$mobile',Email='$email',Year='$year',Section='$section',Edu='$edu',Post='$post' WHERE id='$id';";
+    $sql = "UPDATE members SET Name='$name',Username='$user',Mobile='$mobile',Email='$email',Year='$year',Section='$section',Edu='$edu',Post='$post' WHERE id='$id';";
 
     $result = mysqli_query($conn, $sql);
     if($result)

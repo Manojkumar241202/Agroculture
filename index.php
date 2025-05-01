@@ -4,7 +4,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>VSP Wholesale& Retail Mart</title>
+		<title>DirectHarvest</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -34,7 +34,7 @@
 		<!-- Banner -->
 			<section id="banner" class="wrapper">
 				<div class="container">
-				<h2>VSP Wholesale& Retail Mart</h2>
+				<h2>DirectHarvest</h2>
 				<p>Your Product Our Market</p>
 				<br><br>
 				<center>
@@ -56,7 +56,7 @@
 			<section id="one" class="wrapper style1 align-center">
 				<div class="container">
 					<header>
-						<h2>VSP Wholesale& Retail Mart</h2>
+						<h2>DirectHarvest</h2>
 						<p>Explore the new way of trading...</p>
 					</header>
 					<div class="row 200%">
@@ -66,7 +66,7 @@
 						</section>
 						<section class="4u 12u$(small)">
 							<i class="icon big rounded fa-comments"></i>
-							<p>VSP-Blog</p>
+							<p>DirectHarvest-Blog</p>
 						</section>
 						<section class="4u$ 12u$(small)">
 							<i class="icon big rounded fa-user"></i>
@@ -83,7 +83,7 @@
 			<h1 style="font: 35px calibri;">About Us</h1>
 		</center>
 		<div class="footer-left">
-			<h3 style="font-family: 'Times New Roman', cursive;">VSP Wholesale& Retail Mart &copy; </h3>
+			<h3 style="font-family: 'Times New Roman', cursive;">DirectHarvest &copy; </h3>
 		<!--	<div class="logo">
 				<a href="index.php"><img src="images/logo.png" width="200px"></a>
 			</div>-->
@@ -95,32 +95,20 @@
 		<div class="footer-center">
 			<div>
 				
-				<a href="https://www.google.com/maps/place/10%C2%B058'55.7%22N+77%C2%B011'12.0%22E/@10.9821548,77.1868427,19.42z/data=!4m5!3m4!1s0x0:0xd75128a13396796f!8m2!3d10.9821482!4d77.1866605?hl=en"><i class="fa fa-map-marker"></i><p style="font-size:20px">VSP Wholesale & Retail Mart<span>Paruvai</span></p></a>
+				<a href="https://www.google.com/maps/place/10%C2%B058'55.7%22N+77%C2%B011'12.0%22E/@10.9821548,77.1868427,19.42z/data=!4m5!3m4!1s0x0:0xd75128a13396796f!8m2!3d10.9821482!4d77.1866605?hl=en"><i class="fa fa-map-marker"></i><p style="font-size:20px">DirectHarvest<span>Paruvai</span></p></a>
 			</div>
-			<div>
-				<i class="fa fa-phone"></i>
-				<p style="font-size:20px">9629827706</p>
-			</div>
-			<div>
-				<i class="fa fa-phone"></i>
-				<p style="font-size:20px">7373522973</p>
-			</div>
-			<div>
 				
-				<p style="font-size:20px"><a href="mailto:vigneshshanmugan1144@gmail.com" style="color:white"><i class="fa fa-envelope"></i>vigneshshanmugan1144@gmail.com</a></p>
+				<p style="font-size:20px"><a href="mailto:manojkumar.p24cse@gmail.com" style="color:white"><i class="fa fa-envelope"></i>manojkumar.p24cse@gmail.com</a></p>
 			</div>
 		</div>
 
 		<div class="footer-right">
 			<p class="footer-company-about" style="color:white">
-				<span style="font-size:20px"><b>About VSP Wholesale& Retail Mart</b></span>
-				VSP Wholesale& Retail Mart is e-commerce trading platform for electrical & poultry items ,product used for functions like pakumattai,(tea ,water ,payasam)paper tambler
+				<span style="font-size:20px"><b>About DirectHarvest</b></span>
+				DirectHarvest is e-commerce trading platform for electrical & poultry items ,product used for functions like pakumattai,(tea ,water ,payasam)paper tambler
 			</p>
 			<div class="footer-icons">
-				<a  href="https://www.facebook.com/vignesh.vickyashwintendulkar"><i style="margin-left: 0;margin-top:5px;"class="fa fa-facebook"></i></a>
-				<a href="https://www.instagram.com/vignesh_vsp_1144?r=nametag"><i style="margin-left: 0;margin-top:5px" class="fa fa-instagram"></i></a>
-				<a href="https://youtube.com/channel/UCyXDh_7sVbuio_Uvah6KTUQ"><i style="margin-left: 0;margin-top:5px" class="fa fa-youtube"></i></a>
-				<a href="https://wa.me/qr/35VGWHAWR263N1"><i style="margin-left: 0;margin-top:5px" class="fa fa-whatsapp"></i></a>
+				<a  href="https://www.linkedin.com/in/manojkumar-p24/"><i style="margin-left: 0;margin-top:5px;"class="fa fa-linkedin"></i></a>
 			</div>
 		</div>
 
@@ -222,12 +210,12 @@
 				                            <b>Category : </b>
 				                        </p>
 				                        <div class="3u 12u$(small)">
-				                            <input type="radio" id="farmer" name="category" value="1">
-				                            <label for="farmer">Farmer</label>
+				                            <input type="radio" id="rfarmer" name="category" value="1">
+				                            <label for="rfarmer">Farmer</label>
 				                        </div>
 				                        <div class="3u 12u$(small)">
-				                            <input type="radio" id="buyer" name="category" value="0" checked>
-				                            <label for="buyer">Buyer</label>
+				                            <input type="radio" id="rbuyer" name="category" value="0" checked>
+				                            <label for="rbuyer">Buyer</label>
 				                        </div>
 									</div>
 								<div class="row uniform">

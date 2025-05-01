@@ -30,7 +30,32 @@
 		<link rel="stylesheet" href="css/skel.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-xlarge.css" />
-
+        <style>
+            .tooltip-custom {
+                position: relative;
+                display: inline-block;
+            }
+            .tooltip-custom .tooltip-text {
+                visibility: hidden;
+                width: 200px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -100px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            .tooltip-custom:hover .tooltip-text {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
     </head>
 
 
@@ -87,7 +112,14 @@
                                         <a href="profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
                                     </div>
                                     <div class="3u 12u$(xsmall)">
+            							<?php if($_SESSION['user_type'] == 'farmer'): ?>
             							<a href="uploadProduct.php" class="btn btn-danger" style="text-decoration: none;">Upload Product</a>
+            							<?php else: ?>
+            							<div class="tooltip-custom">
+            							    <a href="#" class="btn btn-danger" style="text-decoration: none; opacity: 0.6; cursor: not-allowed;">Upload Product</a>
+            							    <span class="tooltip-text">Buyers cannot upload products</span>
+            							</div>
+            							<?php endif; ?>
             						</div>
                                     <div class="3u 12u$(large)">
                                         <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>
@@ -107,6 +139,11 @@
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
+            <script>
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            </script>
 
 
 
