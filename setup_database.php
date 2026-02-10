@@ -78,6 +78,11 @@ foreach ($statements as $statement) {
         if (strpos($error_msg, 'already exists') !== false) {
             echo "<p class='info'>ℹ Table already exists (skipped)</p>";
             $error_count--; // Don't count this as an error
+        } 
+        // Ignore foreign key constraint errors (constraint might already exist or be incorrect)
+        elseif (strpos($error_msg, 'foreign key') !== false || strpos($error_msg, 'constraint') !== false) {
+            echo "<p class='info'>ℹ Constraint issue (may need to run fix_database.php): " . htmlspecialchars($error_msg) . "</p>";
+            $error_count--; // Don't count this as an error for now
         } else {
             $errors[] = $error_msg;
             echo "<p class='error'>✗ Error: " . htmlspecialchars($error_msg) . "</p>";

@@ -56,8 +56,7 @@ CREATE TABLE IF NOT EXISTS `buyer` (
   `baddress` text NOT NULL,
   `bactive` int(100) NOT NULL DEFAULT '0',
   PRIMARY KEY (`bid`),
-  UNIQUE KEY `bid` (`bid`),
-  CONSTRAINT `buyer_ibfk_1` FOREIGN KEY (`bid`) REFERENCES `farmer` (`fid`)
+  UNIQUE KEY `bid` (`bid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Table structure for table `fproduct`
