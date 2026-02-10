@@ -1,6 +1,15 @@
 <?php
     session_start();
 
+// Define dataFilter function first
+function dataFilter($data)
+{
+	$data = trim($data);
+ 	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+  	return $data;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	$name = dataFilter($_POST['name']);
@@ -25,17 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $_SESSION['Addr'] = $addr;
     $_SESSION['Rating'] = 0;
     $_SESSION['user_Type'] = $user_type;
-}
 
+	require '../db.php';
 
-require '../db.php';
-
-$length = strlen($mobile);
+	$length = strlen($mobile);
 
 if($length != 10)
 {
 	$_SESSION['message'] = "Invalid Mobile Number !!!";
-	header("location: error.php");
+	header("location: /Login/error.php");
 	die();
 }
 
@@ -43,13 +50,16 @@ if($category == 1)
 {
     $sql = "SELECT * FROM farmer WHERE femail='$email'";
 
-    $result = mysqli_query($conn, "SELECT * FROM farmer WHERE femail='$email'") or die($mysqli->error());
+    $result = mysqli_query($conn, "SELECT * FROM farmer WHERE femail='$email'");
+    if (!$result) {
+        die("Error: " . mysqli_error($conn));
+    }
 
     if ($result->num_rows > 0 )
     {
         $_SESSION['message'] = "User with this email already exists!";
         //echo $_SESSION['message'];
-        header("location: error.php");
+        header("location: /Login/error.php");
     }
     else
     {
@@ -98,13 +108,13 @@ if($category == 1)
 
             //$check = mail( $to, $subject, $message_body );
 
-            header("location: profile.php");
+            header("location: /Login/profile.php");
     	}
     	else
     	{
     	    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     	    $_SESSION['message'] = "Registration failed!";
-            header("location: error.php");
+            header("location: /Login/error.php");
     	}
     }
 }
@@ -113,13 +123,16 @@ else
 {
     $sql = "SELECT * FROM buyer WHERE bemail='$email'";
 
-    $result = mysqli_query($conn, "SELECT * FROM buyer WHERE bemail='$email'") or die($mysqli->error());
+    $result = mysqli_query($conn, "SELECT * FROM buyer WHERE bemail='$email'");
+    if (!$result) {
+        die("Error: " . mysqli_error($conn));
+    }
 
     if ($result->num_rows > 0 )
     {
         $_SESSION['message'] = "User with this email already exists!";
         //echo $_SESSION['message'];
-        header("location: error.php");
+        header("location: /Login/error.php");
     }
     else
     {
@@ -154,23 +167,21 @@ else
 
             //$check = mail( $to, $subject, $message_body );
 
-            header("location: success.php");
+            header("location: /Login/success.php");
     	}
     	else
     	{
     	    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     	    $_SESSION['message'] = "Registration not successfull!";
-            header("location: error.php");
+            header("location: /Login/error.php");
     	}
     }
 }
-
-function dataFilter($data)
+else
 {
-	$data = trim($data);
- 	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-  	return $data;
+    // If accessed directly (GET request), redirect to home page
+    header("location: /index.php");
+    exit();
 }
 
 ?>
