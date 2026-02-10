@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.local
+
+# Sensitive configuration files
+db.local.php
+
+# Uploaded files (if you want to exclude them)
+# images/productImages/*
+# images/profileImages/*
+# !images/productImages/.gitkeep
+# !images/profileImages/.gitkeep
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
