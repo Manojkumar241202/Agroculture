@@ -17,8 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST")
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
+// Process POST request (we know it's POST at this point since we exit above if not)
 	$name = dataFilter($_POST['name']);
 	$mobile = dataFilter($_POST['mobile']);
 	$user = dataFilter($_POST['uname']);
@@ -183,6 +182,5 @@ else
             header("location: /Login/error.php");
     	}
     }
-}
 }
 ?>
