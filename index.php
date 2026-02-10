@@ -124,7 +124,6 @@
 
     <div class="container">
     <h3>Login</h3>
-							<form method="post" action="Login/login.php">
 								<div class="row uniform 50%">
 									<div class="7u$">
 										<input type="text" name="uname" id="uname" value="" placeholder="UserName" style="width:80%" required/>
@@ -153,11 +152,6 @@
 										</div>
 									</div>
 									</center>
-								</div>
-							</form>
-						</section>
-</div>
-    </div>
     </div>
   </form>
 </div>
@@ -210,13 +204,14 @@
 				                            <b>Category : </b>
 				                        </p>
 				                        <div class="3u 12u$(small)">
-				                            <input type="radio" id="rfarmer" name="category" value="1">
+				                            <input type="radio" id="rfarmer" name="category" value="1" onchange="document.getElementById('user_type_input').value='farmer'">
 				                            <label for="rfarmer">Farmer</label>
 				                        </div>
 				                        <div class="3u 12u$(small)">
-				                            <input type="radio" id="rbuyer" name="category" value="0" checked>
+				                            <input type="radio" id="rbuyer" name="category" value="0" checked onchange="document.getElementById('user_type_input').value='buyer'">
 				                            <label for="rbuyer">Buyer</label>
 				                        </div>
+				                        <input type="hidden" name="user_type" id="user_type_input" value="buyer">
 									</div>
 								<div class="row uniform">
 									<div class="3u 12u$(small)">

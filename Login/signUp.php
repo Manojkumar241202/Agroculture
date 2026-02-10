@@ -7,11 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$mobile = dataFilter($_POST['mobile']);
 	$user = dataFilter($_POST['uname']);
 	$email = dataFilter($_POST['email']);
-	$pass =	dataFilter(password_hash($_POST['pass'], PASSWORD_BCRYPT));
+	// Use 'password' field from form, fallback to 'pass' for compatibility
+	$password_input = isset($_POST['password']) ? $_POST['password'] : (isset($_POST['pass']) ? $_POST['pass'] : '');
+	$pass =	dataFilter(password_hash($password_input, PASSWORD_BCRYPT));
 	$hash = dataFilter( md5( rand(0,1000) ) );
 	$category = dataFilter($_POST['category']);
     $addr = dataFilter($_POST['addr']);
-    $user_type = dataFilter($_POST['user_type']);
+    // Set user_type based on category if not provided
+    $user_type = isset($_POST['user_type']) ? dataFilter($_POST['user_type']) : ($category == 1 ? 'farmer' : 'buyer');
 	$_SESSION['Email'] = $email;
     $_SESSION['Name'] = $name;
     $_SESSION['Password'] = $pass;  
