@@ -42,13 +42,13 @@ The `db.php` file has been updated to use environment variables that Wasmer.io p
   - `DB_PORT`
 
 #### Step 4: Build Settings
-For a standard PHP application, you typically don't need:
-- **Start Command:** Leave as "None"
-- **Build Command:** Leave as "None"
-- **Install Command:** Leave as "None"
+**Important:** A `composer.json` file has been created for Wasmer compatibility. Configure as follows:
 
-However, if you need to install dependencies via Composer, you can set:
-- **Install Command:** `composer install`
+- **Start Command:** Leave as "None"
+- **Build Command:** Leave as "None"  
+- **Install Command:** Leave as "None" OR set to `composer install --no-dev --no-scripts` (this will run quickly since there are no dependencies)
+
+**Note:** Even though the app doesn't use Composer dependencies, Wasmer requires `composer.json` to be present. The file has been created with minimal configuration.
 
 #### Step 5: Environment Variables (Optional)
 If you have any additional environment variables, you can add them in the "Environment variables" section.
@@ -136,10 +136,23 @@ The following tables will be created:
 
 ### 7. Troubleshooting
 
+#### Build/Deployment Errors
+
+**Error: `FileNotFoundError: composer.json`**
+- ✅ **Fixed:** A `composer.json` file has been added to the repository
+- Make sure you've committed and pushed `composer.json` to GitHub
+- If the error persists, try setting **Install Command** to: `composer install --no-dev --no-scripts`
+
+**Error: `App was not deployed`**
+- Check the build logs in Wasmer dashboard for specific errors
+- Ensure all required files are committed to GitHub
+- Verify PHP version compatibility (should be 8.3 or compatible)
+
 #### Database Connection Issues
 - Verify environment variables are set correctly
 - Check database is enabled and running
 - Ensure `db.php` uses `getenv()` correctly
+- Test connection by visiting `setup_database.php` after deployment
 
 #### File Upload Issues
 - Check file permissions on upload directories

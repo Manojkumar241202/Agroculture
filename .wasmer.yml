@@ -1,0 +1,17 @@
+# Wasmer.io configuration file
+# This file helps Wasmer understand your application structure
+
+build:
+  # No build step needed for this PHP application
+  install: []
+  
+# PHP configuration
+php:
+  version: "8.3"
+  
+# Web server configuration
+web:
+  # Entry point for the application
+  document_root: "."
+  index_file: "index.php"
+
