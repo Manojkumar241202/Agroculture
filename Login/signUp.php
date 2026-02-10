@@ -10,6 +10,13 @@ function dataFilter($data)
   	return $data;
 }
 
+// If accessed directly (GET request), redirect to home page
+if ($_SERVER["REQUEST_METHOD"] != "POST")
+{
+    header("location: /index.php");
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	$name = dataFilter($_POST['name']);
@@ -177,11 +184,5 @@ else
     	}
     }
 }
-else
-{
-    // If accessed directly (GET request), redirect to home page
-    header("location: /index.php");
-    exit();
 }
-
 ?>

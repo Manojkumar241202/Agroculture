@@ -13,7 +13,7 @@
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="login.css"/>
-		<link rel="stylesheet" type="text/css" href="indexFooter.css">
+		<link rel="stylesheet" type="text/css" href="/indexFooter.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
