@@ -42,13 +42,15 @@ The `db.php` file has been updated to use environment variables that Wasmer.io p
   - `DB_PORT`
 
 #### Step 4: Build Settings
-**Important:** A `composer.json` file has been created for Wasmer compatibility. Configure as follows:
+**CRITICAL:** Configure these settings correctly to avoid build errors:
 
 - **Start Command:** Leave as "None"
 - **Build Command:** Leave as "None"  
-- **Install Command:** Leave as "None" OR set to `composer install --no-dev --no-scripts` (this will run quickly since there are no dependencies)
+- **Install Command:** ⚠️ **MUST BE SET TO "None"** or completely empty
 
-**Note:** Even though the app doesn't use Composer dependencies, Wasmer requires `composer.json` to be present. The file has been created with minimal configuration.
+**Why?** Wasmer's build system will automatically detect `composer.json` and try to run `composer install`. However, if you manually set an Install Command, it might cause conflicts. The safest approach is to leave it as "None" and let Wasmer handle it automatically, OR if Wasmer requires it, set it to: `composer install --no-dev --no-scripts --no-interaction`
+
+**Note:** The `composer.json` file exists in the repository. If you're still getting "composer.json not found" errors, ensure the file is committed and pushed to GitHub.
 
 #### Step 5: Environment Variables (Optional)
 If you have any additional environment variables, you can add them in the "Environment variables" section.
@@ -138,10 +140,22 @@ The following tables will be created:
 
 #### Build/Deployment Errors
 
+**Error: `Composer could not find a composer.json file in /app`**
+- ✅ **Solution 1:** Ensure `composer.json` is committed and pushed:
+  ```bash
+  git add composer.json
+  git commit -m "Add composer.json"
+  git push origin main
+  ```
+- ✅ **Solution 2:** In Wasmer dashboard, go to Build Settings:
+  - Set **Install Command** to: `composer install --no-dev --no-scripts --no-interaction`
+  - OR set it to "None" if Wasmer allows (some versions require a command)
+- ✅ **Solution 3:** If the error persists, check that `composer.json` is in the root directory of your repository (not in a subdirectory)
+
 **Error: `FileNotFoundError: composer.json`**
-- ✅ **Fixed:** A `composer.json` file has been added to the repository
-- Make sure you've committed and pushed `composer.json` to GitHub
-- If the error persists, try setting **Install Command** to: `composer install --no-dev --no-scripts`
+- Same solutions as above
+- Verify the file exists: `ls -la composer.json` in your local repo
+- Check it's tracked by git: `git ls-files | grep composer.json`
 
 **Error: `App was not deployed`**
 - Check the build logs in Wasmer dashboard for specific errors

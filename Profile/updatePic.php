@@ -35,7 +35,7 @@
                     if($result)
                     {
                         $_SESSION['message'] = "Profile picture Updated successfully !!!";
-                        header("Location: ../profileView.php");
+                        header("Location: /profileView.php");
                     }
                     else
                     {

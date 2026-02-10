@@ -15,19 +15,19 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="bootstrap\js\bootstrap.min.js"></script>
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<link rel="stylesheet" href="Blog/commentBox.css" />
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<link rel="stylesheet" href="/Blog/commentBox.css" />
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
 		</noscript>
 </head>
 <body>
@@ -45,7 +45,7 @@
 					$result = mysqli_query($conn, $sql);
 					$frow = mysqli_fetch_assoc($result);
 
-					$picDestination = "images/productImages/".$row['pimage'];
+					$picDestination = "/images/productImages/".$row['pimage'];
 
 					?>
 				<section id="main" class="wrapper style1 align-center">
@@ -73,10 +73,10 @@
                             <center>
                                 <div class="row uniform">
                                     <div class="6u 12u$(large)">
-                                        <a href="myCart.php?flag=1&pid=<?= $pid; ?>" class="btn btn-primary" style="text-decoration: none;"><span class="glyphicon glyphicon-shopping-cart"> AddToCart</a>
+                                        <a href="/myCart.php?flag=1&pid=<?= $pid; ?>" class="btn btn-primary" style="text-decoration: none;"><span class="glyphicon glyphicon-shopping-cart"> AddToCart</a>
                                     </div>
                                     <div class="6u 12u$(large)">
-                                        <a href="buyNow.php?pid=<?= $pid; ?>" class="btn btn-primary" style="text-decoration: none;">Buy Now</a>
+                                        <a href="/buyNow.php?pid=<?= $pid; ?>" class="btn btn-primary" style="text-decoration: none;">Buy Now</a>
                                     </div>
                                 </div>
                             </center>
@@ -116,7 +116,7 @@
 			?>
 			<div class="container">
 				<p style="font: 20px Times new roman; align: left;">Rate this product</p>
-				<form method="POST" action="reviewInput.php?pid=<?= $pid; ?>">
+				<form method="POST" action="/reviewInput.php?pid=<?= $pid; ?>">
 					<div class="row">
 						<div class="col-sm-7">
 							<textarea style="background-color:white;color: black;" cols="5" name="comment" placeholder="Write a review"></textarea>

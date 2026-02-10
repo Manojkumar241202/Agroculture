@@ -70,7 +70,7 @@
                 <div class="box">
                 <header>
                     <center>
-                    <span><img src="<?php echo 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" class="image-circle" class="img-responsive" height="200%"></span>
+                    <span><img src="<?php echo '/images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" class="image-circle" class="img-responsive" height="200%"></span>
                     <br>
                     <h2><?php echo $_SESSION['Name'];?></h2>
                     <h4 style="color: black;"><?php echo $_SESSION['Username'];?></h4>
@@ -106,10 +106,10 @@
                             <center>
                                 <div class="row uniform">
                                     <div class="3u 12u$(large)">
-                                        <a href="changePassPage.php" class="btn btn-danger" style="text-decoration: none;">Change Password</a>
+                                        <a href="/Profile/changePass.php" class="btn btn-danger" style="text-decoration: none;">Change Password</a>
                                     </div>
                                     <div class="3u 12u$(large)">
-                                        <a href="profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
+                                        <a href="/profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
                                     </div>
                                     <div class="3u 12u$(xsmall)">
             							<?php if($_SESSION['user_type'] == 'farmer'): ?>

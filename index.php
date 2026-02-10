@@ -8,23 +8,23 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="bootstrap\js\bootstrap.min.js"></script>
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="login.css"/>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/login.css"/>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
 		</noscript>
-		<link rel="stylesheet" href="indexfooter.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<link rel="stylesheet" href="/indexfooter.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	</head>
 
 	<?php
@@ -85,7 +85,7 @@
 		<div class="footer-left">
 			<h3 style="font-family: 'Times New Roman', cursive;">DirectHarvest &copy; </h3>
 		<!--	<div class="logo">
-				<a href="index.php"><img src="images/logo.png" width="200px"></a>
+				<a href="/index.php"><img src="/images/logo.png" width="200px"></a>
 			</div>-->
 			<br />
 			<p style="font-size:20px;color:white">Your product Our market !!!</p>

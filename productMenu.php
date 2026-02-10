@@ -10,21 +10,21 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="bootstrap\js\bootstrap.min.js"></script>
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="login.css"/>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/login.css"/>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
 		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
 	</head>
 	<body class>
 
@@ -48,7 +48,7 @@
 					if(isset($_GET['n']) AND $_GET['n'] == 1):
 				?>
 					<h3>Select Filter</h3>
-					<form method="GET" action="productMenu.php?">
+					<form method="GET" action="/productMenu.php">
 						<input type="text" value="1" name="n" style="display: none;"/>
 						<center>
 							<div class="row">
@@ -98,12 +98,12 @@
 					<?php
 
 						while($row = $result->fetch_array()):
-							$picDestination = "images/productImages/".$row['pimage'];
+							$picDestination = "/images/productImages/".$row['pimage'];
 						?>
 							<div class="col-md-4">
 							<section>
 							<strong><h2 class="title" style="color:black; "><?php echo $row['product'].'';?></h2></strong>
-							<a href="review.php?pid=<?php echo $row['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" height="220px;"  /></a>
+							<a href="/review.php?pid=<?php echo $row['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" height="220px;"  /></a>
 
 							<div style="align: left">
 							<blockquote><?php echo "Type : ".$row['pcat'].'';?><br><?php echo "Price : ".$row['price'].' /-';?><br></blockquote>

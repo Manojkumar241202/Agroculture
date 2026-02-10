@@ -69,7 +69,7 @@
         <section id="two" class="wrapper style2 align-center">
         <div class="container">
             <center>
-                <form method="post" action="buyNow.php?pid=<?= $pid; ?>" style="border: 1px solid black; padding: 15px;">
+                <form method="post" action="/buyNow.php?pid=<?= $pid; ?>" style="border: 1px solid black; padding: 15px;">
                     <center>
                     <div class="row uniform">
                         <div class="6u 12u$(xsmall)">

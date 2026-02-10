@@ -30,7 +30,7 @@
     if($result)
     {
         $_SESSION['message'] = "Profile Updated successfully !!!";
-        header("Location: ../profileView.php");
+        header("Location: /profileView.php");
     }
     else
     {

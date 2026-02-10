@@ -70,12 +70,12 @@
                             $sql = "SELECT * FROM fproduct WHERE pid = '$pid'";
                             $result1 = mysqli_query($conn, $sql);
                             $row1 = $result1->fetch_array();
-							$picDestination = "images/productImages/".$row1['pimage'];
+							$picDestination = "/images/productImages/".$row1['pimage'];
 						?>
 							<div class="col-md-4">
 							<section>
 							<strong><h2 class="title" style="color:black; "><?php echo $row1['product'].'';?></h2></strong>
-							<a href="review.php?pid=<?php echo $row1['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" alt=""  /></a>
+							<a href="/review.php?pid=<?php echo $row1['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" alt=""  /></a>
 
 							<div style="align: left">
 							<blockquote><?php echo "Type : ".$row1['pcat'].'';?><br><?php echo "Price : ".$row1['price'].' /-';?><br></blockquote>

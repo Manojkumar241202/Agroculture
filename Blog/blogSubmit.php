@@ -30,7 +30,7 @@
     }
 	else
 	{
-		header("Location: ../blogView.php");
+		header("Location: /blogView.php");
 	}
 
     function dataFilter($data)

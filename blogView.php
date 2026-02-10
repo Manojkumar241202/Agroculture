@@ -103,21 +103,21 @@
 		<title>AgroCulture : Blogs</title>
 		<meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="bootstrap\js\bootstrap.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<link rel="stylesheet" href="css/skel.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/style-xlarge.css" />
-		<link rel="stylesheet" href="Blog/commentBox.css" />
+		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<link rel="stylesheet" href="/css/skel.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/style-xlarge.css" />
+		<link rel="stylesheet" href="/Blog/commentBox.css" />
 	</head>
 	<body class="subpage">
 
@@ -134,7 +134,7 @@
 
 						</div>
 						<div class="3u 12u$(small)">
-							<a href="blogWrite.php" class="button special fit"><span class="glyphicon glyphicon-pencil"></span> Write a Blog</a>
+							<a href="/blogWrite.php" class="button special fit"><span class="glyphicon glyphicon-pencil"></span> Write a Blog</a>
 						</div>
 					</div>
 					<br />
@@ -153,7 +153,7 @@
 							<p><?= $row['blogTime']; ?></p>
 						</blockquote>
 
-						<form method="post" action="blogView.php">
+						<form method="post" action="/blogView.php">
 							<div class="row">
 								<div class="6u 12u$(xsmall)">
 									<button class = "button special small" name="<?php echo 'like'.$id; ?>">
@@ -181,7 +181,7 @@
 								while($row1 = $result1->fetch_array()) :
 						?>
 							<div class="con darker">
-								<img src="<?php echo 'images/profileImages/'.$row1['commentPic']?>" alt="Avatar"><span><em><?= $row1['commentUser']; ?></em></span>
+								<img src="<?php echo '/images/profileImages/'.$row1['commentPic']?>" alt="Avatar"><span><em><?= $row1['commentUser']; ?></em></span>
 								<br>
 								<?= $row1['comment']; ?>
 								<span class="time-right"><?= formatDate($row1['commentTime']); ?></span>

@@ -49,12 +49,12 @@
             <div class="inner">
                 <div class="box">
                 <header>
-                    <span class="image left"><img src="<?php echo isset($_SESSION['picName']) ? 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand() : 'images/default-profile.jpg'; ?>" class="img-circle" class="img-responsive" height="200px"></span>
+                    <span class="image left"><img src="<?php echo isset($_SESSION['picName']) ? '/images/profileImages/'.$_SESSION['picName'].'?'.mt_rand() : '/images/default-profile.jpg'; ?>" class="img-circle" class="img-responsive" height="200px"></span>
                     <br>
                     <h2><?php echo $_SESSION['Name'];?></h2>
                     <h4><?php echo $_SESSION['Username'];?></h4>
                     <br>
-                    <form method="post" action="Profile/updatePic.php" enctype="multipart/form-data">
+                    <form method="post" action="/Profile/updatePic.php" enctype="multipart/form-data">
                         <input type="file" name="profilePic" id="profilePic">
                         <br>
                         <div class="12u$">
@@ -63,7 +63,7 @@
                         </div>
                     </form>
                 </header>
-                <form method="post" action="Profile/updateProfile.php">
+                <form method="post" action="/Profile/updateProfile.php">
                     <div class="row uniform">
                         <div class="8u 12u$(xsmall)">
                             <input type="text" name="name" id="name" value="<?php echo $_SESSION['Name'];?>" placeholder="Full Name" required />
