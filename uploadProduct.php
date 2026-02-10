@@ -40,8 +40,26 @@
 				$picNameNew = $productName.$_SESSION['productPicId'].".".$picActualExt ;
 				$_SESSION['productPicName'] = $picNameNew;
 				$_SESSION['productPicExt'] = $picActualExt;
-				$picDestination = "/images/productImages/".$picNameNew;
-				move_uploaded_file($picTmpName, $picDestination);
+				// Use file system path for move_uploaded_file (not URL path)
+				// __DIR__ gives the directory where this script is located
+				$uploadDir = __DIR__ . "/images/productImages/";
+				// Ensure directory exists
+				if (!is_dir($uploadDir)) {
+					mkdir($uploadDir, 0755, true);
+				}
+				$picDestination = $uploadDir . $picNameNew;
+				
+				// Log for debugging
+				error_log("Uploading image to: " . $picDestination);
+				error_log("Temporary file: " . $picTmpName);
+				error_log("File exists check: " . (file_exists($picTmpName) ? 'YES' : 'NO'));
+				
+				if (move_uploaded_file($picTmpName, $picDestination)) {
+					error_log("Image uploaded successfully to: " . $picDestination);
+					error_log("File exists after upload: " . (file_exists($picDestination) ? 'YES' : 'NO'));
+				} else {
+					error_log("Failed to move uploaded file. Error: " . error_get_last()['message']);
+				}
 				$id = $_SESSION['id'];
 
 				$sql = "UPDATE fproduct SET picStatus=1, pimage='$picNameNew' WHERE product='$productName';";
@@ -51,7 +69,7 @@
 				{
 
 					$_SESSION['message'] = "Product Image Uploaded successfully !!!";
-					header("Location: market.php");
+					header("Location: /market.php");
 				}
 				else
 				{
