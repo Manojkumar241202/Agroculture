@@ -18,12 +18,12 @@
         if($result)
         {
             $_SESSION['message'] = "Order Succesfully placed! <br /> Thanks for shopping with us!!!";
-            header('Location: Login/success.php');
+            header('Location: /Login/success.php');
         }
         else {
-            echo $result->mysqli_error();
-            //$_SESSION['message'] = "Sorry!<br />Order was not placed";
-            //header('Location: Login/error.php');
+            error_log("Transaction insert error: " . mysqli_error($conn));
+            $_SESSION['message'] = "Sorry! Order was not placed: " . mysqli_error($conn);
+            header('Location: /Login/error.php');
         }
     }
 ?>

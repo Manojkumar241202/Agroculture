@@ -25,11 +25,19 @@
                     $picNameNew = "profile".$_SESSION['picId'].".".$picActualExt ;
                     $_SESSION['picName'] = $picNameNew;
                     $_SESSION['picExt'] = $picActualExt;
-                    $picDestination = "../images/profileImages/".$picNameNew;
+                    // Use file system path for move_uploaded_file
+                    $uploadDir = dirname(__DIR__) . "/images/profileImages/";
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0755, true);
+                    }
+                    $picDestination = $uploadDir . $picNameNew;
                     move_uploaded_file($picTmpName, $picDestination);
                     $id = $_SESSION['id'];
 
-                    $sql = "UPDATE members SET picStatus=1, picExt='$picActualExt' WHERE id='$id';";
+                    // Update farmer or buyer table based on category
+                    $table = ($_SESSION['Category'] == 1) ? 'farmer' : 'buyer';
+                    $idField = ($_SESSION['Category'] == 1) ? 'fid' : 'bid';
+                    $sql = "UPDATE $table SET picStatus=1, picExt='$picActualExt' WHERE $idField='$id';";
 
                     $result = mysqli_query($conn, $sql);
                     if($result)
@@ -40,7 +48,7 @@
                     else
                     {
                         $_SESSION['message'] = "There was an error in updating your profile picture! Please Try again!";
-                        header("Location: ../Login/error.php");
+                        header("Location: /Login/error.php");
                     }
                 }
                 else
@@ -57,7 +65,7 @@
         }
         else if(isset($_POST['remove']) AND $_SESSION['picId'] != 0)
         {
-            $picToRemove = "../images/profileImages/".$_SESSION['picName'];
+            $picToRemove = dirname(__DIR__) . "/images/profileImages/".$_SESSION['picName'];
             if(!unlink($picToRemove))
             {
                 $_SESSION['message'] = "There was an error in deleting the profile picture!";
@@ -67,13 +75,16 @@
             {
                 $_SESSION['message'] = "The profile picture was successfully deleted!";
                 $id = $_SESSION['id'];
-                $sql = "UPDATE members SET picStatus=0, picExt='png' WHERE id='$id';";
+                // Update farmer or buyer table based on category
+                $table = ($_SESSION['Category'] == 1) ? 'farmer' : 'buyer';
+                $idField = ($_SESSION['Category'] == 1) ? 'fid' : 'bid';
+                $sql = "UPDATE $table SET picStatus=0, picExt='png' WHERE $idField='$id';";
                 $_SESSION['picId'] = 0;
                 $_SESSION['picExt'] = "png";
                 $_SESSION['picName'] = "profile0.png";
                 $result = mysqli_query($conn, $sql);
 
-                header("Location: ../profileView.php");
+                header("Location: /profileView.php");
             }
         }
         else
@@ -82,6 +93,7 @@
         }
     }
 
+// Define dataFilter function
 function dataFilter($data)
 {
     $data = trim($data);

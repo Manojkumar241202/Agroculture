@@ -1,6 +1,21 @@
 <?php
     session_start();
 
+// Define dataFilter function first
+function dataFilter($data)
+{
+	$data = trim($data);
+ 	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+  	return $data;
+}
+
+    // Check if POST request
+    if ($_SERVER["REQUEST_METHOD"] != "POST") {
+        header("location: /index.php");
+        exit();
+    }
+
     $user = dataFilter($_POST['uname']);
     $pass = $_POST['pass'];
     $category = dataFilter($_POST['category']);
@@ -53,13 +68,13 @@ if($category == 1)
             }
             //echo $_SESSION['Email']."  ".$_SESSION['Name'];
 
-            header("location: profile.php");
+            header("location: /Login/profile.php");
         }
         else
         {
             //echo mysqli_error($conn);
             $_SESSION['message'] = "Invalid User Credentials!";
-            header("location: error.php");
+            header("location: /Login/error.php");
         }
     }
 }
@@ -96,23 +111,16 @@ else
 
             //echo $_SESSION['Email']."  ".$_SESSION['Name'];
 
-            header("location: profile.php");
+            header("location: /Login/profile.php");
         }
         else
         {
             //echo mysqli_error($conn);
             $_SESSION['message'] = "Invalid User Credentials!";
-            header("location: error.php");
+            header("location: /Login/error.php");
         }
     }
 }
 
-    function dataFilter($data)
-    {
-    	$data = trim($data);
-     	$data = stripslashes($data);
-    	$data = htmlspecialchars($data);
-      	return $data;
-    }
 
 ?>

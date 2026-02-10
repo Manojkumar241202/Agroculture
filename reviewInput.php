@@ -14,10 +14,12 @@
     $result = mysqli_query($conn, $sql);
     if(!$result)
     {
-        echo $result->mysqli_error();
+        error_log("Review insert error: " . mysqli_error($conn));
+        $_SESSION['message'] = "Error submitting review: " . mysqli_error($conn);
+        header("Location: /Login/error.php");
     }
     else {
-        header("Location: review.php?pid=".$pid);
+        header("Location: /review.php?pid=".$pid);
     }
 
 ?>
